@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaxiMídia - Agência de Marketing</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f8fb;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #003a75;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background-color: #0056b3;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .banner {
+            background: linear-gradient(to bottom, rgba(0, 86, 179, 0.5), rgba(0, 58, 117, 0.7)), 
+                        url('https://th.bing.com/th/id/R.1fe0b7b49dd6374cb207ca299887d455?rik=I8%2fWs0XTkFCiJA&pid=ImgRaw&r=0') no-repeat center center/cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #003a75;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        footer {
+            background-color: #003a75;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>MaxiMídia</h1>
+        <p>Sua parceira em estratégias de marketing</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#cases">Cases</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="banner">
+        Transforme suas ideias em resultados reais
+    </div>
+
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>MaxiMídia é uma agência de marketing inovadora e dinâmica, dedicada a transformar ideias em campanhas impactantes. Nossa missão é ampliar a visibilidade e o alcance de nossos clientes através de estratégias personalizadas e soluções criativas.</p>
+        <p>Na MaxiMídia, combinamos análise de mercado, design atraente e tecnologia de ponta para desenvolver campanhas que ressoam com o público-alvo e geram resultados tangíveis. Nossa equipe é composta por profissionais apaixonados e experientes em branding, publicidade digital, mídia social e conteúdo de marketing.</p>
+    </section>
+
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Desenvolvimento de Marca</h3>
+                <p>Criação e revitalização de identidades visuais fortes e memoráveis.</p>
+            </div>
+            <div class="service">
+                <h3>Marketing Digital</h3>
+                <p>Campanhas online, SEO, SEM e marketing de conteúdo.</p>
+            </div>
+            <div class="service">
+                <h3>Mídia Social</h3>
+                <p>Estratégias e gerenciamento de presença nas principais plataformas sociais.</p>
+            </div>
+            <div class="service">
+                <h3>Publicidade</h3>
+                <p>Concepção e execução de anúncios impactantes para mídias diversas.</p>
+            </div>
+            <div class="service">
+                <h3>Consultoria Estratégica</h3>
+                <p>Planejamento e aconselhamento para alcançar objetivos de negócios.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cases">
+        <h2>Cases de Sucesso</h2>
+        <p>Confira como ajudamos nossos clientes a alcançar seus objetivos.</p>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Estamos comprometidos em ser o parceiro estratégico que nossos clientes precisam para crescer e prosperar no mercado competitivo de hoje. Com a MaxiMídia, suas ideias são amplificadas e seus resultados, maximizados.</p>
+        <p>Email: contato@maximidia.com</p>
+        <p>Telefone: (11) 1234-5678</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MaxiMídia. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
